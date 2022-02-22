@@ -57,7 +57,7 @@ printf "\n${GRN}Setting ownership of files for apt...${NC}\n"
 sudo chown _apt -R $TEMP_DIR
 
 printf "\n${GRN}Installing packages...${NC}\n"
-sudo apt install -qq -y ./*.deb
+sudo apt install -qq -y --allow-downgrades ./*.deb
 
 printf "\n${GRN}Locking version to 1.3.15...${NC}\n"
 cat <<EOF | sudo tee /etc/apt/preferences.d/pin-deluge
